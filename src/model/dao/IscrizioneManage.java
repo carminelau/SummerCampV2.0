@@ -13,4 +13,6 @@ public interface IscrizioneManage {
 	List<Iscrizione> getIscrizioniByGenitore(String cfGenitore);
 	
 	List<Iscrizione> getAll();
+	
+	List<Iscrizione> getIscrizioneByCentro(int id);
 }

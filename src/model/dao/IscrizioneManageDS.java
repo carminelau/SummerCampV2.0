@@ -1,8 +1,11 @@
 package model.dao;
 
+import static model.entity.Iscrizione.FIND_ISCRIZIONE_BY_CENTRO;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceException;
 
 import listener.LocalEntityManagerFactory;
@@ -70,6 +73,16 @@ public class IscrizioneManageDS implements IscrizioneManage {
 	
 	
 	private EntityManager em;
+
+	@Override
+	public List<Iscrizione> getIscrizioneByCentro(int id) {
+		try {
+			return em.createNamedQuery(Iscrizione.FIND_ISCRIZIONE_BY_CENTRO, Iscrizione.class)
+					.setParameter("idcent", id).getResultList();
+		} finally {
+				close();
+		}
+	}
 
 	
 

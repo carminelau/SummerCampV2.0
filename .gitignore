@@ -1,3 +1,6 @@
 /build/
 *.ini
 *.ini
+WebContent/META-INF/context.xml
+.classpath
+.classpath

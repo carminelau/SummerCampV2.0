@@ -106,15 +106,16 @@ public class Iscrizione implements Serializable {
 		this.pagata = pagata;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Iscrizione [idIscrizione=" + idIscrizione + ", dataIscrizione=" + dataIscrizione + ", qrCode=" + qrCode
 				+ ", prezzo=" + prezzo + ", richiestaDisdetta=" + richiestaDisdetta + ", rimborsoDisdetta="
 				+ rimborsoDisdetta + ", servizioSportivo=" + servizioSportivo + ", tipoSoggiorno=" + tipoSoggiorno
 				+ ", pagata=" + pagata + ", bambino=" + bambino + ", genitore=" + genitore + ", settimane=" + settimane
-				+ "]";
+				+ ", centro=" + centro + "]";
 	}
-	
+
 	public static final boolean matches(Iscrizione i) {
 		if(!i.getQrCode().matches("^[A-Za-z 0-9 ]{2,}$")
 			|| i.getDataIscrizione().after(new Date())
@@ -158,5 +159,17 @@ public class Iscrizione implements Serializable {
 	  joinColumns = @JoinColumn(name = "idiscrizione"), 
 	  inverseJoinColumns = @JoinColumn(name = "idsettimana"))
 	private List<Settimana> settimane;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCentro", referencedColumnName = "idcentro")
+	private Centro centro;
+
+	public Centro getCentro() {
+		return centro;
+	}
+
+	public void setCentro(Centro centro) {
+		this.centro = centro;
+	}
    
 }

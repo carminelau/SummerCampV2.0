@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="settimana")
 @NamedQueries({
-	@NamedQuery(name=FIND_BY_SETTIMANE_DISPONIBILI, query="SELECT s FROM Settimana s WHERE s.disponibilita > 0")
+	@NamedQuery(name=FIND_BY_SETTIMANE_DISPONIBILI, query="SELECT s FROM Settimana s, CentroSettimana cs WHERE s.idSettimana = cs.idsettimana AND cs.disponibilita >0")
 })
 public class Settimana implements Serializable {
 
@@ -55,12 +55,6 @@ public class Settimana implements Serializable {
 	public void setDataFine(Date dataFine) {
 		this.dataFine = dataFine;
 	}
-	public int getDisponibilita() {
-		return disponibilita;
-	}
-	public void setDisponibilita(int disponibilita) {
-		this.disponibilita = disponibilita;
-	}
 
 
 	private static final long serialVersionUID = 1L;
@@ -71,7 +65,6 @@ public class Settimana implements Serializable {
 	private int idSettimana;
 	private Date dataInizio;
 	private Date dataFine;
-	private int disponibilita;
 	@ManyToMany(mappedBy="settimane")
 	private List<Iscrizione> iscrizioni;
    

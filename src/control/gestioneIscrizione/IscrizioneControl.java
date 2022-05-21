@@ -19,9 +19,15 @@ import javax.servlet.http.Part;
 
 import model.dao.BambinoManage;
 import model.dao.BambinoManageDS;
+import model.dao.CentroManage;
+import model.dao.CentroManageDS;
+import model.dao.CentroSettimanaManage;
+import model.dao.CentroSettimanaManageDS;
 import model.dao.IscrizioneManage;
 import model.dao.IscrizioneManageDS;
 import model.entity.Bambino;
+import model.entity.Centro;
+import model.entity.CentroSettimana;
 import model.entity.Genitore;
 import model.entity.Iscrizione;
 import model.entity.Utente;
@@ -68,6 +74,15 @@ public class IscrizioneControl extends HttpServlet {
 		
 		SettimanaManage settimanaManage = new SettimanaManageDS();
 		List<Settimana> settimane = settimanaManage.getSettimaneDisponibili();
+		request.setAttribute("settimane", settimane);
+		
+		CentroManage centroman = new CentroManageDS();
+		List<Centro> centro = centroman.getCentri();
+		request.setAttribute("centri", centro);
+		
+		CentroSettimanaManage centrosettman= new CentroSettimanaManageDS();
+		List<CentroSettimana> centrosettimana = centrosettman.getCentriSettimana();
+		request.setAttribute("centrosettimana", centrosettimana);
 		
 		List<Settimana> maggio = new ArrayList<Settimana>();
 		List<Settimana> giugno = new ArrayList<Settimana>();
@@ -130,6 +145,7 @@ public class IscrizioneControl extends HttpServlet {
 		boolean servizioSportivo = Boolean.parseBoolean(request.getParameter("servizioSportivo"));
 		String tagliaIndumenti = (String) request.getParameter("tagliaIndumenti");
 		String tipoSoggiorno = (String) request.getParameter("tipoSoggiorno");
+		String nomecentro = (String) request.getParameter("nomecentro");
 		Genitore genitore = (Genitore) request.getSession(false).getAttribute("utente");
 		
 		Part fileDocIdentita = request.getPart("documentoIdentita");
@@ -159,7 +175,7 @@ public class IscrizioneControl extends HttpServlet {
 			(!documentoIdentita.matches("([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(.jpeg|.png|.pdf)$")) ||
 			(!certificatoMedico.matches("([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(.jpeg|.png|.pdf)$"))
 		) {
-			request.setAttribute("errorMessage", "Il formato dei dati è errato o le settimane non sono selezionate!");
+			request.setAttribute("errorMessage", "Il formato dei dati ï¿½ errato o le settimane non sono selezionate!");
 			this.doGet(request, response);
 			return;
 		}
@@ -237,6 +253,8 @@ public class IscrizioneControl extends HttpServlet {
 			iscrizione.setRimborsoDisdetta(0);
 			iscrizione.setDataIscrizione(new Date());
 			iscrizione.setServizioSportivo(servizioSportivo);
+			CentroManage centroman= new CentroManageDS();
+			iscrizione.setCentro(centroman.getCentro(nomecentro));
 			iscrizione.setQrCode("QRCODE");
 			if(bambino!=null) {
 				iscrizione.setBambino(bambino);

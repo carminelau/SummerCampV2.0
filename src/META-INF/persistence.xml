@@ -9,8 +9,9 @@
 		<class>model.entity.Utente</class>
 		<class>test.User</class>
 		<class>model.entity.Centro</class>
+		<class>model.entity.CentroSettimana</class>
 		<properties>
 			<property name="hibernate.id.new_generator_mappings" value="false" ></property>
 		</properties>
-	</persistence-unit>
+		</persistence-unit>
 </persistence>

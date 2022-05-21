@@ -68,6 +68,7 @@ public class Centro implements Serializable{
 		this.capienzatotale = capienzatotale;
 	}
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idCentro;
 	private String denominazione;
 	private String indirizzo;

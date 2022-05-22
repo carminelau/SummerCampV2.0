@@ -30,7 +30,7 @@ private EntityManager em;
 	}
 
 	@Override
-	public int getDisponibilita(Settimana s, Centro c) {
+	public int getDisponibilita(int s, int c) {
 		try {
 			TypedQuery<CentroSettimana> query = em.createNamedQuery(CentroSettimana.GET_AVAILABLE_BY_WEEK_AND_CENTER, CentroSettimana.class);
 			query.setParameter("idsett", s);
@@ -44,7 +44,7 @@ private EntityManager em;
 	}
 
 	@Override
-	public List<Settimana> getSettimaneDisponibilibyCentro(Centro c) {
+	public List<Settimana> getSettimaneDisponibilibyCentro(int c) {
 		try {
 			TypedQuery<Settimana> query = em.createNamedQuery(CentroSettimana.FIND_WEEKS_AVAILABLE_BY_CENTER, Settimana.class);
 			query.setParameter("idcent", c);
@@ -57,7 +57,7 @@ private EntityManager em;
 	}
 
 	@Override
-	public List<Centro> getCentriDisponibilibySettimana(Settimana s) {
+	public List<Centro> getCentriDisponibilibySettimana(int s) {
 		try {
 			TypedQuery<Centro> query = em.createNamedQuery(CentroSettimana.FIND_CENTERS_AVAILABLES_BY_WEEK, Centro.class);
 			query.setParameter("idsett", s);

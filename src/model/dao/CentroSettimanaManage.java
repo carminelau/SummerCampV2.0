@@ -9,11 +9,11 @@ import model.entity.Settimana;
 public interface CentroSettimanaManage {
 	
 	
-	int getDisponibilita(Settimana s, Centro c);
+	int getDisponibilita(int s, int c);
 	
-	List<Settimana> getSettimaneDisponibilibyCentro(Centro c);
+	List<Settimana> getSettimaneDisponibilibyCentro(int c);
 	
-	List<Centro> getCentriDisponibilibySettimana(Settimana s);
+	List<Centro> getCentriDisponibilibySettimana(int s);
 	
 	List<CentroSettimana> getCentriSettimana();
 	

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,model.entity.Utente, model.entity.Bambino, model.entity.Settimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,model.entity.Utente, model.entity.Bambino, model.entity.Settimana, model.entity.Centro, model.entity.CentroSettimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 List<Bambino> bambini = (List<Bambino>) request.getAttribute("bambini"); 
 
@@ -7,6 +7,9 @@ List<Settimana> giugno = (List<Settimana>) request.getAttribute("giugno");
 List<Settimana> luglio = (List<Settimana>) request.getAttribute("luglio"); 
 List<Settimana> agosto = (List<Settimana>) request.getAttribute("agosto"); 
 List<Settimana> settembre = (List<Settimana>) request.getAttribute("settembre"); 
+
+List<Centro> centri = (List<Centro>) request.getAttribute("centri");
+List<CentroSettimana> centroSettimana = (List<CentroSettimana>) request.getAttribute("centrosettimana");
 
 String error = (String) request.getAttribute("errorMessage");
 
@@ -166,6 +169,19 @@ String error = (String) request.getAttribute("errorMessage");
 
       <div class="infoIscrizione">
         <h1 class="h5 mb-3 font-weight-normal text-center">Informazioni ai fini dell'iscrizione</h1>
+        
+         <div class="form-label">
+       	  <label for="selezionaCentro">Seleziona centro estivo</label>
+          <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus>
+            <option value="" selected>---</option>
+            <%
+                	for(Centro c: centri) {
+                		
+                	%>
+                		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
+             		 <%}%>
+          </select>
+    	  </div>
 
         <div class="form-check form-switch">
           <input name="servizioSportivo" value="true" class="form-check-input" type="checkbox" id="servizioSportivo">
@@ -223,7 +239,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: <%=s.getDisponibilita()%>
+                  			<!-- Posti disponibili:  -->
                 		</label>
              		</div>
              		 <%}%>
@@ -256,7 +272,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: <%=s.getDisponibilita()%>
+                  			<!-- Posti disponibili:   -->
                 		</label>
              		</div>
              		 <%}%>
@@ -289,7 +305,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: <%=s.getDisponibilita()%>
+                  			<!--  Posti disponibili:  -->
                 		</label>
              		</div>
              		 <%}%>
@@ -322,7 +338,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: <%=s.getDisponibilita()%>
+                  			<!-- Posti disponibili:   -->
                 		</label>
              		</div>
              		 <%}%>
@@ -355,7 +371,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: <%=s.getDisponibilita()%>
+                  			<!-- Posti disponibili: -->
                 		</label>
              		</div>
              		 <%}%>

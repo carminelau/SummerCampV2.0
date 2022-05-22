@@ -61,16 +61,16 @@ public class Centro implements Serializable{
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
 	}
-	public int getCapienzatotale() {
-		return capienzatotale;
+	public int getCapienzaTot() {
+		return capienzaTot;
 	}
-	public void setCapienzatotale(int capienzatotale) {
-		this.capienzatotale = capienzatotale;
+	public void setCapienzaTot(int capienzaTot) {
+		this.capienzaTot = capienzaTot;
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idCentro;
 	private String denominazione;
 	private String indirizzo;
-	private int capienzatotale;
+	private int capienzaTot;
 }

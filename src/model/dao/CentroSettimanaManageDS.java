@@ -71,7 +71,7 @@ private EntityManager em;
 	@Override
 	public List<CentroSettimana> getCentriSettimana() {
 		try {
-			TypedQuery<CentroSettimana> query = em.createNamedQuery("SELECT i FROM CentroSettimana i", CentroSettimana.class);
+			TypedQuery<CentroSettimana> query = em.createNamedQuery(CentroSettimana.FIND_ALL_CENTRISETTIMANA, CentroSettimana.class);
 			
 			List<CentroSettimana> re = query.getResultList();
 			return re;

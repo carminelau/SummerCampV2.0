@@ -107,6 +107,14 @@ public class Iscrizione implements Serializable {
 	public void setPagata(boolean pagata) {
 		this.pagata = pagata;
 	}
+	
+	public Centro getCentro() {
+		return centro;
+	}
+
+	public void setCentro(Centro centro) {
+		this.centro = centro;
+	}
 
 
 	@Override
@@ -166,13 +174,5 @@ public class Iscrizione implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "idCentro", referencedColumnName = "idcentro")
 	private Centro centro;
-
-	public Centro getCentro() {
-		return centro;
-	}
-
-	public void setCentro(Centro centro) {
-		this.centro = centro;
-	}
    
 }

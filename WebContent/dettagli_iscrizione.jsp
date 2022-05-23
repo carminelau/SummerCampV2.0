@@ -1,9 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,model.entity.Iscrizione, model.entity.Bambino, model.entity.Settimana, control.gestioneIscrizione.SingolaIscrizioneControl"
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,model.entity.Iscrizione, model.entity.Bambino, model.entity.Settimana, control.gestioneIscrizione.SingolaIscrizioneControl, model.entity.Centro"
 	pageEncoding="UTF-8"%>
 
 <%
 	Iscrizione iscrizione = (Iscrizione) request.getAttribute("iscrizione");
 	
+	List<Centro> centri = (List<Centro>) request.getAttribute("centri");
+	
+	Centro centroid = iscrizione.getCentro();
 %>
 
 <%@include file="./assets/includes/header.jsp" %>
@@ -54,6 +57,8 @@
                     	
                     </span><br>
                     <span>Tipo soggiorno: <b><%= iscrizione.getTipoSoggiorno() %></b></span><br>
+                    
+                    <span>Centro scelto: <b><%= centroid.getDenominazione()%></b></span><br>
                     
                   </div>
 

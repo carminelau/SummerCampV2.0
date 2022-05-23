@@ -4,8 +4,6 @@
 <%
 	Iscrizione iscrizione = (Iscrizione) request.getAttribute("iscrizione");
 	
-	List<Centro> centri = (List<Centro>) request.getAttribute("centri");
-	
 	Centro centroid = iscrizione.getCentro();
 %>
 

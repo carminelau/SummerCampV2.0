@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.connector.Response;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 
 import model.dao.CentroManage;
 import model.dao.CentroManageDS;
@@ -53,8 +53,9 @@ public class CentriControl extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("dopo getWriter");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		System.out.println("dopo getWriter");
 		String idCentro = request.getParameter("idCentro");
 		
 		if (idCentro == null) {
@@ -68,12 +69,12 @@ public class CentriControl extends HttpServlet {
 		
 		List<CentroSettimana> settimane = centroSettimanaManage.getSettimaneDisponibilibyCentro(Integer.parseInt( idCentro ));
 		System.out.println("BOMBA1: "+ settimane);
-		
-		String json = new Gson().toJson(settimane);
+				
+		String gson = new Gson().toJson(settimane);
 		
 		response.setContentType("application/json");
 	    response.setCharacterEncoding("UTF-8");
-	    response.getWriter().write(json);
+	    response.getWriter().write(gson);
 		
 	}
 	

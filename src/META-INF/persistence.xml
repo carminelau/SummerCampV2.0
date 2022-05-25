@@ -3,13 +3,13 @@
 	<persistence-unit name="SummerCenterPU" transaction-type="RESOURCE_LOCAL">
         <non-jta-data-source>java:/comp/env/jdbc/SummerCenterDS</non-jta-data-source>
 		<class>model.entity.Bambino</class>
+		<class>model.entity.Centro</class>
+		<class>model.entity.CentroSettimana</class>
 		<class>model.entity.Genitore</class>
 		<class>model.entity.Iscrizione</class>
 		<class>model.entity.Settimana</class>
 		<class>model.entity.Utente</class>
 		<class>test.User</class>
-		<class>model.entity.Centro</class>
-		<class>model.entity.CentroSettimana</class>
 		<properties>
 			<property name="hibernate.id.new_generator_mappings" value="false" ></property>
 		</properties>

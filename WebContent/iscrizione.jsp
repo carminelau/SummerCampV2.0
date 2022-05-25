@@ -178,7 +178,7 @@ String error = (String) request.getAttribute("errorMessage");
                 	for(Centro c: centri) {
                 		
                 	%>
-                		<option value="<%=c.getIdCentro()%>"><%=c.getDenominazione()%></option>
+                		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
              		 <%}%>
           </select>
     	  </div>

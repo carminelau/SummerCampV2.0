@@ -108,6 +108,16 @@ $(document).ready(function() {
 		dataNascita.setAttribute("readonly", "readonly");
 	});
 	
+	document.getElementById("selezionaCentro").addEventListener('click',function onChangeCentro(event) {
+    	//Salvo la scelta
+    	const scelta = document.getElementById("selezionaCentro").value();
+    	
+    	const sceltaCentro = $("#selezionaCentro :selected").attr("value");
+    	
+	});
+    	
+    	
+	
     // Selezione form e definizione dei metodi di validazione
     $("#form_iscrizione").validate({
         // Definiamo le nostre regole di validazione
@@ -237,4 +247,7 @@ $(document).ready(function() {
     $.validator.addMethod('patternFile', function(value, element) {
     	return /([a-zA-Z0-9\s_\\.\-\(\):])+(.jpeg|.png|.pdf)$/.test(value);
     }, "Nome file non valido o estensione non consentita!");
+    
+    
 });
+

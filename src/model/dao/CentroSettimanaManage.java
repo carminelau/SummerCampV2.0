@@ -11,7 +11,7 @@ public interface CentroSettimanaManage {
 	
 	int getDisponibilita(int s, int c);
 	
-	List<Settimana> getSettimaneDisponibilibyCentro(int c);
+	List<CentroSettimana> getSettimaneDisponibilibyCentro(int c);
 	
 	List<Centro> getCentriDisponibilibySettimana(int s);
 	

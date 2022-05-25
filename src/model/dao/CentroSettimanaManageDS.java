@@ -44,12 +44,13 @@ private EntityManager em;
 	}
 
 	@Override
-	public List<Settimana> getSettimaneDisponibilibyCentro(int c) {
+	public List<CentroSettimana> getSettimaneDisponibilibyCentro(int c) {
 		try {
-			TypedQuery<Settimana> query = em.createNamedQuery(CentroSettimana.FIND_WEEKS_AVAILABLE_BY_CENTER, Settimana.class);
+			TypedQuery<CentroSettimana> query = em.createNamedQuery(CentroSettimana.FIND_WEEKS_AVAILABLE_BY_CENTER, CentroSettimana.class);
 			query.setParameter("idcent", c);
+			System.out.println("BOMBA: "+ query);
 			
-			List<Settimana> re = query.getResultList();
+			List<CentroSettimana> re = query.getResultList();
 			return re;
 		} finally {
 				em.close();

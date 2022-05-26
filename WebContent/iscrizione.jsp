@@ -179,6 +179,7 @@ String error = (String) request.getAttribute("errorMessage");
                 		
                 	%>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 		<optgroup label="<%=c.getCentro().getDenominazione()%>">
                 		<% int i =0;
                 		for (Settimana s: c.getSettimane()){
@@ -186,6 +187,9 @@ String error = (String) request.getAttribute("errorMessage");
                 			<option value=<%=s.getIdSettimana()%>><%=s.toString() + " disponibilità: " + c.getDisponibilita().get(i)%></option>
                 		<%i++;} %>
                 		</optgroup>
+=======
+                		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
+>>>>>>> parent of ba1f681 (Modify value of option Centro)
 =======
                 		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
 >>>>>>> parent of ba1f681 (Modify value of option Centro)

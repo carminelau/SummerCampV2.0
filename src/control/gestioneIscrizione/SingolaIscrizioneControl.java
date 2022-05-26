@@ -11,13 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
 
-import model.dao.CentroSettimanaManage;
-import model.dao.CentroSettimanaManageDS;
+
 import model.dao.IscrizioneManage;
 import model.dao.IscrizioneManageDS;
-import model.entity.CentroSettimana;
 import model.entity.Genitore;
 import model.entity.Iscrizione;
 import model.entity.Utente;

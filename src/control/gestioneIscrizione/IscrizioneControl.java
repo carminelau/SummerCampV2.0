@@ -31,7 +31,6 @@ import model.entity.CentroSettimana;
 import model.entity.Genitore;
 import model.entity.Iscrizione;
 import model.entity.Utente;
-import model.entity.customCentroSettimana;
 import model.dao.SettimanaManage;
 import model.dao.SettimanaManageDS;
 import model.dao.UtenteManage;
@@ -52,10 +51,6 @@ public class IscrizioneControl extends HttpServlet {
     public IscrizioneControl() {
         super();
         // TODO Auto-generated constructor stub
-        
-        /**
-         * 
-         */
     }
 
 	/**
@@ -121,28 +116,6 @@ public class IscrizioneControl extends HttpServlet {
 		request.setAttribute("luglio", luglio);
 		request.setAttribute("agosto", agosto);
 		request.setAttribute("settembre", settembre);
-		
-		ArrayList<customCentroSettimana> lista = new ArrayList<customCentroSettimana>();
-		
-		for (Centro c: centro) {
-			customCentroSettimana pippo = new customCentroSettimana();
-			pippo.setCentro(c);
-			ArrayList<Settimana> listaSettimane = new ArrayList<Settimana>();
-			ArrayList<String> disponibilita = new ArrayList<String>();
-			for (CentroSettimana cs: centrosettimana) {
-				if(cs.getIdcentro()==c.getIdCentro()) {
-					if(cs.getDisponibilita()>0) {
-						listaSettimane.add(settimanaManage.getSettimana(cs.getIdsettimana()));
-						disponibilita.add(String.valueOf(cs.getDisponibilita()));
-					}
-				}
-			}
-			pippo.setDisponibilita(disponibilita);
-			pippo.setSettimane(listaSettimane);
-			lista.add(pippo);
-		}
-		
-		request.setAttribute("custom", lista);	
 		
 
 		/**

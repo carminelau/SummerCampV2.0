@@ -19,12 +19,6 @@ import javax.persistence.*;
 })
 public class Settimana implements Serializable {
 
-	@Override
-	public String toString() {
-		return "Settimana dal " + dataInizio.toString().substring(8, 10) + "-" + dataInizio.toString().substring(5, 7) + " al " + dataFine.toString().substring(8, 10) + "-" + dataFine.toString().substring(5, 7);
-	}
-
-
 	public Settimana() {
 	}
 	

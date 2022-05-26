@@ -1,14 +1,15 @@
-<%@ page language="java" import="java.util.*,model.entity.Utente, model.entity.Bambino, model.entity.Settimana, model.entity.Centro, model.entity.CentroSettimana,model.entity.customCentroSettimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,model.entity.Utente, model.entity.Bambino, model.entity.Settimana, model.entity.Centro, model.entity.CentroSettimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 List<Bambino> bambini = (List<Bambino>) request.getAttribute("bambini"); 
+
 List<Settimana> maggio = (List<Settimana>) request.getAttribute("maggio");
-List<Settimana> giugno = (List<Settimana>) request.getAttribute("giugno");
-List<Settimana> luglio = (List<Settimana>) request.getAttribute("luglio");
-List<Settimana> agosto = (List<Settimana>) request.getAttribute("agosto");
-List<Settimana> settembre = (List<Settimana>) request.getAttribute("settembre");
+List<Settimana> giugno = (List<Settimana>) request.getAttribute("giugno"); 
+List<Settimana> luglio = (List<Settimana>) request.getAttribute("luglio"); 
+List<Settimana> agosto = (List<Settimana>) request.getAttribute("agosto"); 
+List<Settimana> settembre = (List<Settimana>) request.getAttribute("settembre"); 
+
 List<Centro> centri = (List<Centro>) request.getAttribute("centri");
 List<CentroSettimana> centroSettimana = (List<CentroSettimana>) request.getAttribute("centrosettimana");
-List<customCentroSettimana> custom = (List<customCentroSettimana>) request.getAttribute("custom");
 
 String error = (String) request.getAttribute("errorMessage");
 
@@ -171,28 +172,13 @@ String error = (String) request.getAttribute("errorMessage");
         
          <div class="form-label">
        	  <label for="selezionaCentro">Seleziona centro estivo</label>
-          <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus multiple>
+          <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus>
             <option value="" selected>---</option>
             <%
-            		
-                	for(customCentroSettimana c: custom) {
+                	for(Centro c: centri) {
                 		
                 	%>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                		<optgroup label="<%=c.getCentro().getDenominazione()%>">
-                		<% int i =0;
-                		for (Settimana s: c.getSettimane()){
-                		%>
-                			<option value=<%=s.getIdSettimana()%>><%=s.toString() + " disponibilità: " + c.getDisponibilita().get(i)%></option>
-                		<%i++;} %>
-                		</optgroup>
-=======
                 		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
->>>>>>> parent of ba1f681 (Modify value of option Centro)
-=======
-                		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
->>>>>>> parent of ba1f681 (Modify value of option Centro)
              		 <%}%>
           </select>
     	  </div>
@@ -222,12 +208,14 @@ String error = (String) request.getAttribute("errorMessage");
             <option value="Full-Time">Full-Time</option>
           </select>
     	  </div>
-<!--
+
         <h1 class="h5 mb-3 font-weight-normal text-center">Seleziona periodo di soggiorno</h1>
+        
+      
         <div class="card-body">
           <div class="accordion" id="accordionExample">
           
-          <!-- Maggio 
+          <!-- Maggio -->
           <%if(maggio.size()!=0) {	%>
           <div class="card-header" id="HeadingMaggio">
                 <h2 class="mb-0">
@@ -241,7 +229,7 @@ String error = (String) request.getAttribute("errorMessage");
                 <div class="card-body">
                 	<%
                 	for(Settimana s: maggio) {
-                		                		
+                		
                 	%>
                 	
                 	<div class="form-check">
@@ -251,7 +239,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			Posti disponibili: 
+                  			<!-- Posti disponibili:  -->
                 		</label>
              		</div>
              		 <%}%>
@@ -260,7 +248,7 @@ String error = (String) request.getAttribute("errorMessage");
              	</div>
              	<%}%>
              	
-          <!-- Giugno
+          <!-- Giugno -->
           <%if(giugno.size()!=0) {	%>
           <div class="card-header" id="HeadingGiugno">
                 <h2 class="mb-0">
@@ -284,7 +272,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			<!-- Posti disponibili:   
+                  			<!-- Posti disponibili:   -->
                 		</label>
              		</div>
              		 <%}%>
@@ -293,7 +281,7 @@ String error = (String) request.getAttribute("errorMessage");
              	</div>
              	<%}%>
              	
-          <!-- Luglio 
+          <!-- Luglio -->
           <%if(luglio.size()!=0) {	%>
           <div class="card-header" id="HeadingLuglio">
                 <h2 class="mb-0">
@@ -317,7 +305,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			<!--  Posti disponibili:  
+                  			<!--  Posti disponibili:  -->
                 		</label>
              		</div>
              		 <%}%>
@@ -326,7 +314,7 @@ String error = (String) request.getAttribute("errorMessage");
              	</div>
              	<%}%>
              	
-          <!-- Agosto 
+          <!-- Agosto -->
           <%if(agosto.size()!=0) {	%>
           <div class="card-header" id="HeadingAgosto">
                 <h2 class="mb-0">
@@ -350,7 +338,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			<!-- Posti disponibili:   
+                  			<!-- Posti disponibili:   -->
                 		</label>
              		</div>
              		 <%}%>
@@ -359,7 +347,7 @@ String error = (String) request.getAttribute("errorMessage");
              	</div>
              	<%}%>
              	
-          <!-- Settembre 
+          <!-- Settembre -->
           <%if(settembre.size()!=0) {	%>
           <div class="card-header" id="HeadingSettembre">
                 <h2 class="mb-0">
@@ -383,7 +371,7 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			<!-- Posti disponibili: 
+                  			<!-- Posti disponibili: -->
                 		</label>
              		</div>
              		 <%}%>
@@ -393,7 +381,7 @@ String error = (String) request.getAttribute("errorMessage");
              	<%}%>
              	
              </div>
-            </div>-->
+            </div>
 </div>     	
                    
           

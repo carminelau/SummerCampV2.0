@@ -25,35 +25,16 @@ public class SettimanaManageDS implements SettimanaManage {
 	
 	@Override
 	public Settimana getSettimana(int id) {
-		
-		if( em.isOpen()) {
 		return em.find(Settimana.class, id);
-		} else {
-			try{
-				em = LocalEntityManagerFactory.getEntityManager();
-			} catch( RuntimeException ex){
-				ex.printStackTrace(System.err);
-				throw ex;
-			}
-			return em.find(Settimana.class, id);
-		}
 	}
 
 	@Override
 	public List<Settimana> getSettimaneDisponibili() {
-		
-			
-			if( em.isOpen()) {
-				return em.createNamedQuery(Settimana.FIND_BY_SETTIMANE_DISPONIBILI, Settimana.class).getResultList();
-				} else {
-					try{
-						em = LocalEntityManagerFactory.getEntityManager();
-					} catch( RuntimeException ex){
-						ex.printStackTrace(System.err);
-						throw ex;
-					}
-					return em.createNamedQuery(Settimana.FIND_BY_SETTIMANE_DISPONIBILI, Settimana.class).getResultList();
-				}
+		try {
+			return em.createNamedQuery(Settimana.FIND_BY_SETTIMANE_DISPONIBILI, Settimana.class).getResultList();
+		} finally {
+			close();
+		} 
 	}
 	
 	private EntityManager em;

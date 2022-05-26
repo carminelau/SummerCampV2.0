@@ -171,17 +171,19 @@ String error = (String) request.getAttribute("errorMessage");
         
          <div class="form-label">
        	  <label for="selezionaCentro">Seleziona centro estivo</label>
-          <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus>
+          <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus multiple>
             <option value="" selected>---</option>
             <%
+            		
                 	for(customCentroSettimana c: custom) {
                 		
                 	%>
                 		<optgroup label="<%=c.getCentro().getDenominazione()%>">
-                		<% for (Settimana s: c.getSettimane()){
+                		<% int i =0;
+                		for (Settimana s: c.getSettimane()){
                 		%>
-                			<option value=<%=s.getIdSettimana()%>><%=s.toString() %></option>
-                		<%} %>
+                			<option value=<%=s.getIdSettimana()%>><%=s.toString() + " disponibilità: " + c.getDisponibilita().get(i)%></option>
+                		<%i++;} %>
                 		</optgroup>
              		 <%}%>
           </select>

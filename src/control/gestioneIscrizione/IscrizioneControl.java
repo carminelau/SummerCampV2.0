@@ -128,13 +128,16 @@ public class IscrizioneControl extends HttpServlet {
 			customCentroSettimana pippo = new customCentroSettimana();
 			pippo.setCentro(c);
 			ArrayList<Settimana> listaSettimane = new ArrayList<Settimana>();
+			ArrayList<String> disponibilita = new ArrayList<String>();
 			for (CentroSettimana cs: centrosettimana) {
 				if(cs.getIdcentro()==c.getIdCentro()) {
 					if(cs.getDisponibilita()>0) {
 						listaSettimane.add(settimanaManage.getSettimana(cs.getIdsettimana()));
+						disponibilita.add(String.valueOf(cs.getDisponibilita()));
 					}
 				}
 			}
+			pippo.setDisponibilita(disponibilita);
 			pippo.setSettimane(listaSettimane);
 			lista.add(pippo);
 		}

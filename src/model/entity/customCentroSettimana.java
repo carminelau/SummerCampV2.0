@@ -30,4 +30,21 @@ public class customCentroSettimana implements Serializable{
 	}
 	private Centro centro;
 	private List<Settimana> settimane;
+	private List<String> disponibilita;
+	public customCentroSettimana(Centro centro, List<Settimana> settimane, List<String> disponibilita) {
+		super();
+		this.centro = centro;
+		this.settimane = settimane;
+		this.disponibilita = disponibilita;
+	}
+
+	public List<String> getDisponibilita() {
+		return disponibilita;
+	}
+
+	public void setDisponibilita(List<String> disponibilita) {
+		this.disponibilita = disponibilita;
+	}
+	
+	
 }

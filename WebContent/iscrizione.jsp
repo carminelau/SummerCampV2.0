@@ -173,12 +173,12 @@ String error = (String) request.getAttribute("errorMessage");
          <div class="form-label">
        	  <label for="selezionaCentro">Seleziona centro estivo</label>
           <select name="selezionaCentro" class="form-control" aria-label="Default select example" required autofocus>
-            <option value="" selected>---</option>
+            <option value="" selected>Seleziona centro estivo</option>
             <%
                 	for(Centro c: centri) {
                 		
                 	%>
-                		<option value="<%=c.getDenominazione()%>"><%=c.getDenominazione()%></option>
+                		<option value="<%=c.getIdCentro()%>"><%=c.getDenominazione()%></option>
              		 <%}%>
           </select>
     	  </div>
@@ -239,7 +239,6 @@ String error = (String) request.getAttribute("errorMessage");
                   			<br>
                   			Data fine: <%=s.getDataFine()%>
                   			<br>
-                  			<!-- Posti disponibili:  -->
                 		</label>
              		</div>
              		 <%}%>

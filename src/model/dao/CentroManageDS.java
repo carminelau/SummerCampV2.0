@@ -46,7 +46,7 @@ public class CentroManageDS implements CentroManage{
 			TypedQuery<Centro> query = em.createNamedQuery(Centro.FIND_BY_NAME, Centro.class);
 			query.setParameter("denominazione", denominazione);
 			
-			Centro re = query.getSingleResult();
+			Centro re = (Centro) query.getSingleResult();
 			return re;
 		} finally {
 				em.close();

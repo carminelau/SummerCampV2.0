@@ -145,7 +145,7 @@ public class IscrizioneControl extends HttpServlet {
 		boolean servizioSportivo = Boolean.parseBoolean(request.getParameter("servizioSportivo"));
 		String tagliaIndumenti = (String) request.getParameter("tagliaIndumenti");
 		String tipoSoggiorno = (String) request.getParameter("tipoSoggiorno");
-		String nomecentro = (String) request.getParameter("nomecentro");
+		String codicecentro = (String) request.getParameter("selezionaCentro");
 		Genitore genitore = (Genitore) request.getSession(false).getAttribute("utente");
 		
 		Part fileDocIdentita = request.getPart("documentoIdentita");
@@ -254,7 +254,7 @@ public class IscrizioneControl extends HttpServlet {
 			iscrizione.setDataIscrizione(new Date());
 			iscrizione.setServizioSportivo(servizioSportivo);
 			CentroManage centroman= new CentroManageDS();
-			iscrizione.setCentro(centroman.getCentro(nomecentro));
+			iscrizione.setCentro(centroman.getCentro(Integer.parseInt(codicecentro)));
 			iscrizione.setQrCode("QRCODE");
 			if(bambino!=null) {
 				iscrizione.setBambino(bambino);

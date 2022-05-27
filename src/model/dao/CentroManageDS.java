@@ -3,10 +3,12 @@ package model.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import listener.LocalEntityManagerFactory;
 import model.entity.Bambino;
 import model.entity.Centro;
+import model.entity.CentroSettimana;
 import model.entity.Iscrizione;
 
 public class CentroManageDS implements CentroManage{
@@ -27,12 +29,28 @@ public class CentroManageDS implements CentroManage{
 
 	@Override
 	public Centro getCentro(int id) {
-		return em.find(Centro.class,id);
+		try {
+			TypedQuery<Centro> query = em.createNamedQuery(Centro.FIND_BY_ID, Centro.class);
+			query.setParameter("idCentro", id);
+			
+			Centro re = query.getSingleResult();
+			return re;
+		} finally {
+				em.close();
+				}
 	}
 
 	@Override
 	public Centro getCentro(String denominazione) {
-		return em.find(Centro.class,denominazione);
+		try {
+			TypedQuery<Centro> query = em.createNamedQuery(Centro.FIND_BY_NAME, Centro.class);
+			query.setParameter("denominazione", denominazione);
+			
+			Centro re = query.getSingleResult();
+			return re;
+		} finally {
+				em.close();
+				}
 	}
 
 	@Override

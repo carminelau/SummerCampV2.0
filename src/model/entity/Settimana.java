@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="settimana")
 @NamedQueries({
-	@NamedQuery(name=FIND_BY_SETTIMANE_DISPONIBILI, query="SELECT s FROM Settimana s, CentroSettimana cs WHERE s.idSettimana = cs.idsettimana AND cs.disponibilita >0")
+	@NamedQuery(name=FIND_BY_SETTIMANE_DISPONIBILI, query="SELECT s FROM Settimana s")
 })
 public class Settimana implements Serializable {
 

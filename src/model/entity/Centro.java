@@ -7,6 +7,8 @@ import java.util.GregorianCalendar;
 import javax.persistence.*;
 
 import static model.entity.Centro.FIND_ALL_CENTER;
+import static model.entity.Centro.FIND_BY_ID;
+import static model.entity.Centro.FIND_BY_NAME;
 
 
 /**
@@ -16,11 +18,15 @@ import static model.entity.Centro.FIND_ALL_CENTER;
 @Entity
 @Table(name="centro")
 @NamedQueries({
-	@NamedQuery(name=FIND_ALL_CENTER, query="SELECT i FROM Centro i")
+	@NamedQuery(name=FIND_ALL_CENTER, query="SELECT i FROM Centro i"),
+	@NamedQuery(name=FIND_BY_NAME, query="SELECT i FROM Centro i WHERE i.denominazione=:denominazione "),
+	@NamedQuery(name=FIND_BY_ID, query="SELECT i FROM Centro i WHERE i.idCentro=:idCentro "),
 })
 public class Centro implements Serializable{
 	
-	public static final String FIND_ALL_CENTER = "Centro.findAll";
+	public static final String FIND_ALL_CENTER = "centro.findAll";
+	public static final String FIND_BY_NAME = "centro.findByName";
+	public static final String FIND_BY_ID = "centro.findById";
 	
 	@Override
 	public boolean equals(Object obj) {

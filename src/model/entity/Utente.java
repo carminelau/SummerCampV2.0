@@ -15,10 +15,21 @@ import javax.persistence.*;
 public abstract class Utente implements Serializable {
 
 	
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	public Utente() {
 	}
+	
+	@Enumerated(EnumType.STRING)
+    private Provider provider;
+ 
+    public Provider getProvider() {
+        return provider;
+    }
 	
 	public String getNome() {
 		return nome;
@@ -108,5 +119,9 @@ public abstract class Utente implements Serializable {
 	private String numTelefono;
 	@Transient
 	private int eta;
+	
+	public enum Provider {
+	    LOCAL, GOOGLE
+	}
    
 }

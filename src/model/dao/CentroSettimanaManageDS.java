@@ -1,7 +1,5 @@
 package model.dao;
 
-import static model.entity.CentroSettimana.FIND_CENTERS_AVAILABLES_BY_WEEK;
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -32,7 +30,7 @@ private EntityManager em;
 	@Override
 	public int getDisponibilita(int s, int c) {
 		try {
-			TypedQuery<CentroSettimana> query = em.createNamedQuery(CentroSettimana.GET_AVAILABLE_BY_WEEK_AND_CENTER, CentroSettimana.class);
+			TypedQuery<CentroSettimana> query = (TypedQuery<CentroSettimana>) em.createNamedQuery(CentroSettimana.GET_AVAILABLE_BY_WEEK_AND_CENTER);
 			query.setParameter("idsett", s);
 			query.setParameter("idcent", c);
 			
@@ -46,7 +44,7 @@ private EntityManager em;
 	@Override
 	public List<Settimana> getSettimaneDisponibilibyCentro(int c) {
 		try {
-			TypedQuery<Settimana> query = em.createNamedQuery(CentroSettimana.FIND_WEEKS_AVAILABLE_BY_CENTER, Settimana.class);
+			TypedQuery<Settimana> query = (TypedQuery<Settimana>) em.createNamedQuery(CentroSettimana.FIND_WEEKS_AVAILABLE_BY_CENTER);
 			query.setParameter("idcent", c);
 			
 			List<Settimana> re = query.getResultList();
@@ -59,7 +57,7 @@ private EntityManager em;
 	@Override
 	public List<Centro> getCentriDisponibilibySettimana(int s) {
 		try {
-			TypedQuery<Centro> query = em.createNamedQuery(CentroSettimana.FIND_CENTERS_AVAILABLES_BY_WEEK, Centro.class);
+			TypedQuery<Centro> query = (TypedQuery<Centro>) em.createNamedQuery(CentroSettimana.FIND_CENTERS_AVAILABLES_BY_WEEK);
 			query.setParameter("idsett", s);
 			
 			List<Centro> re = query.getResultList();
@@ -71,7 +69,7 @@ private EntityManager em;
 	@Override
 	public List<CentroSettimana> getCentriSettimana() {
 		try {
-			TypedQuery<CentroSettimana> query = em.createNamedQuery(CentroSettimana.FIND_ALL_CENTRISETTIMANA, CentroSettimana.class);
+			TypedQuery<CentroSettimana> query = (TypedQuery<CentroSettimana>) em.createNamedQuery(CentroSettimana.FIND_ALL_CENTRISETTIMANA);
 			
 			List<CentroSettimana> re = query.getResultList();
 			return re;

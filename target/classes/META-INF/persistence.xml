@@ -10,7 +10,6 @@
 		<class>model.entity.Settimana</class>
 		<class>model.entity.Utente</class>
 		<class>test.User</class>
-		<class>model.entity.Responsabile</class>
 		<properties>
 			<property name="hibernate.id.new_generator_mappings" value="false" ></property>
 		</properties>

@@ -73,10 +73,37 @@ public class Centro implements Serializable{
 	public void setCapienzaTot(int capienzaTot) {
 		this.capienzaTot = capienzaTot;
 	}
+	public String getComune() {
+		return comune;
+	}
+
+	public void setComune(String comune) {
+		this.comune = comune;
+	}
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idCentro;
 	private String denominazione;
 	private String indirizzo;
 	private int capienzaTot;
+	private String comune;
+	private String provincia;
+
+	public static boolean matches(Centro c) {
+		if((c.getDenominazione()==null)
+			|| c.getComune() == null
+			|| c.getProvincia()== null
+			|| c.getCapienzaTot() < -1) {
+			return false;
+		}
+		else return true;
+		
+		}
 }

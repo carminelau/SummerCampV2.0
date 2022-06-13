@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.persistence.DiscriminatorType.*;
 /**
  * Entity implementation class for Entity: Utente
  *
@@ -11,25 +12,14 @@ import javax.persistence.*;
 @Entity
 @Table(name = "utente")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "ruolo")
+@DiscriminatorColumn(name = "ruolo", length=20)
 public abstract class Utente implements Serializable {
 
 	
-	public void setProvider(Provider provider) {
-		this.provider = provider;
-	}
-
 	private static final long serialVersionUID = 1L;
 
 	public Utente() {
 	}
-	
-	@Enumerated(EnumType.STRING)
-    private Provider provider;
- 
-    public Provider getProvider() {
-        return provider;
-    }
 	
 	public String getNome() {
 		return nome;
@@ -120,8 +110,6 @@ public abstract class Utente implements Serializable {
 	@Transient
 	private int eta;
 	
-	public enum Provider {
-	    LOCAL, GOOGLE
-	}
+	public abstract boolean isAdmin();
    
 }

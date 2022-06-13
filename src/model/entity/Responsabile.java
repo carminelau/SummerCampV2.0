@@ -7,14 +7,19 @@ import java.util.List;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Genitore
+ * Entity implementation class for Entity: Responsabile
  *
  */
 @Entity
-@DiscriminatorValue("genitore")
-public class Genitore extends Utente {
+@DiscriminatorValue("responsabile")
+public class Responsabile extends Utente {
 	
-	public Genitore() {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Responsabile() {
 	}
 	
 	public String getLuogoNascita() {
@@ -92,11 +97,11 @@ public class Genitore extends Utente {
 
 	@Override
 	public String toString() {
-		return "Genitore [luogoNascita=" + luogoNascita + ", indirizzo=" + indirizzo + ", citta=" + citta
+		return "Responsabile [luogoNascita=" + luogoNascita + ", indirizzo=" + indirizzo + ", citta=" + citta
 				+ ", provincia=" + provincia + ", CAP=" + CAP + ", professione=" + professione
 				+ ", numTelefonoSecondario=" + numTelefonoSecondario + ", documentoIdentita=" + documentoIdentita
 				+ ", consensoInfo=" + consensoInfo + ", consensoImgEVideo=" + consensoImgEVideo + ", delega=" + delega
-				+ ", infoFamiliari=" + infoFamiliari + "]";
+				+ ", infoFamiliari=" + infoFamiliari +"Ruolo " + admin +"]";
 	}
 	
 	public static final boolean matches(Genitore g) {
@@ -121,8 +126,8 @@ public class Genitore extends Utente {
 		return admin;
 	}
 
-	public static void setAdmin(boolean admin) {
-		Genitore.admin = admin;
+	public void setAdmin(boolean admin) {
+		Responsabile.admin = admin;
 	}
 
 
@@ -139,8 +144,7 @@ public class Genitore extends Utente {
 	private String delega;
 	private String infoFamiliari;
 	
-	private static boolean admin=false;
-
+	private static boolean admin=true;
 
 }
 

@@ -50,6 +50,10 @@ public class LoginControl extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
+		System.out.println(email);
+		System.out.println(password);
+
+		
 		UtenteManage utenteManage = new UtenteManageDS();
 		Utente utente = utenteManage.getUserIfExists(email, password);
 	

@@ -3,6 +3,7 @@ package model.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import listener.LocalEntityManagerFactory;
@@ -65,6 +66,17 @@ public class CentroManageDS implements CentroManage{
 	public void close(){
 		em.close();
 	}
-	
+	@Override
+	public void inserisciCentro(Centro c) throws PersistenceException {
+		
+		if(c!=null) {
+			if(Centro.matches(c)) {
+				em.getTransaction().begin();
+				em.persist(c);
+				em.getTransaction().commit();
+			} else throw new IllegalArgumentException("I campi non rispettano i controlli");
+			
+		}
+	}	
 
 }

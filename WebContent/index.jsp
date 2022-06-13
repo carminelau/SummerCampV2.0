@@ -18,7 +18,10 @@ if(utente != null) {
 		  </button>
 		</div>
 	<% } %>
+<<<<<<< Updated upstream
 	<a href="/@{/oauth2/authorization/google}">Login with Google</a>
+=======
+>>>>>>> Stashed changes
 	    	<form id="form_login" class="form-signin" action="login" method="post" data-toggle="validator" role="form">
 	
 	   	  <div class="text-center mb-4">

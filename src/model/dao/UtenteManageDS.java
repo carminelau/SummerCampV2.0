@@ -48,6 +48,7 @@ public class UtenteManageDS implements UtenteManage {
 		try {
 			return (Utente) em.createQuery("SELECT u FROM Utente u WHERE email=:email AND password=:password")
 					.setParameter("email", email).setParameter("password", password).getSingleResult();
+			
 		} catch(NoResultException e) {
 			return null;
 		} finally {

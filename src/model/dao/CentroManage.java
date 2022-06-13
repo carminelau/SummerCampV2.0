@@ -21,5 +21,7 @@ public interface CentroManage {
 	 * @return List<Centro>
 	 */
 	List<Centro> getCentri();
+	
+	void inserisciCentro(Centro c);
 
 }

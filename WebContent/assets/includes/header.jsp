@@ -81,8 +81,17 @@ else {
                 </li>
                 <% 
                 if(utente.isAdmin()) {%>
-                <li data-toggle="collapse" aria-expanded="false">
-                    <a href="${pageContext.request.contextPath}/centri">Gestisci Centri</a>
+                <li>
+                <a href="#pageSubCentri" data-toggle="collapse" aria-expanded="false">Gestisci Centri</a>
+                    <ul class="collapse list-unstyled" id="pageSubCentri">
+                        <li>
+                            <a href="${pageContext.request.contextPath}/centri">Inserisci Centro</a>
+
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/list_centri">Visualizza Centri</a>
+                        </li>
+                    </ul>
                 </li>
                 <%} %>
                 <%}%>

@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,model.entity.Iscrizione, model.entity.Bambino, model.entity.Settimana, control.gestioneIscrizione.VisualizzaIscrizioniControl"
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,model.entity.Centro,model.entity.Iscrizione, model.entity.Bambino, model.entity.Settimana, control.gestioneIscrizione.VisualizzaIscrizioniControl"
 	pageEncoding="UTF-8"%>
 
 <%
 	List<Iscrizione> iscrizioni = (List<Iscrizione>) request.getAttribute("iscrizioni");
+
+	Centro cen = (Centro) request.getAttribute("centro");
 	
 %>
 
@@ -14,8 +16,12 @@
   <body>
 
     <div class="container">
-
+	<%if(cen==null) {%>
       <p class="text-left font-weight-bold">Le mie iscrizioni</p>
+    <%}else{ %>
+    <p class="text-left font-weight-bold">Le iscrizioni del centro <%= cen.getDenominazione() %></p>
+    <% } %>
+    	
 
 	<% if(iscrizioni != null) { %>
       <div class="row">

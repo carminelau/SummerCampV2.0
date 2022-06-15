@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.dao.BambinoManage;
 import model.dao.BambinoManageDS;
+import model.dao.CentroManage;
+import model.dao.CentroManageDS;
 import model.dao.IscrizioneManage;
 import model.dao.IscrizioneManageDS;
 import model.dao.SettimanaManage;
@@ -24,8 +26,10 @@ import model.dao.SettimanaManageDS;
 import model.dao.UtenteManage;
 import model.dao.UtenteManageDS;
 import model.entity.Bambino;
+import model.entity.Centro;
 import model.entity.Genitore;
 import model.entity.Iscrizione;
+import model.entity.Responsabile;
 import model.entity.Settimana;
 import model.entity.Utente;
 
@@ -54,16 +58,38 @@ public class VisualizzaIscrizioniControl extends HttpServlet {
 			return;
 		} 
 		
-		if(!(u instanceof Genitore)) {
-			response.sendError(403, "Non sei autorizzato!");
-			return;
+		
+		
+		String action = request.getParameter("action");
+		
+		if (action.equalsIgnoreCase("centri")) {
+			if(!u.isAdmin()) {
+				response.sendError(403, "Non sei autorizzato!");
+				return;
+			}
+			String centro= request.getParameter("centro");
+		
+			IscrizioneManage iscrizioneManage = new IscrizioneManageDS();
+			List<Iscrizione> iscrizioni = (List<Iscrizione>) iscrizioneManage.getIscrizioneByCentro(Integer.parseInt(centro));
+			
+			CentroManage centroman= new CentroManageDS();
+			Centro cen = (Centro) centroman.getCentro(Integer.parseInt(centro));
+			
+			request.setAttribute("iscrizioni", iscrizioni);
+			request.setAttribute("centro", cen);
+		
+		}
+		else {
+			if(u.isAdmin()) {
+				response.sendError(403, "Non sei autorizzato!");
+				return;
+			}
+			IscrizioneManage iscrizioneManage = new IscrizioneManageDS();
+			List<Iscrizione> iscrizioni = (List<Iscrizione>) iscrizioneManage.getIscrizioniByGenitore(u.getCodiceFiscale());
+			
+			request.setAttribute("iscrizioni", iscrizioni);
 		}
 		
-		IscrizioneManage iscrizioneManage = new IscrizioneManageDS();
-		List<Iscrizione> iscrizioni = (List<Iscrizione>) iscrizioneManage.getIscrizioniByGenitore(u.getCodiceFiscale());
-		
-		
-		request.setAttribute("iscrizioni", iscrizioni);
 		
 		
 		/**

@@ -77,6 +77,10 @@ public class CentroManageDS implements CentroManage{
 			} else throw new IllegalArgumentException("I campi non rispettano i controlli");
 			
 		}
+	}
+	@Override
+	public void setCencellato(int centro) {
+		em.createQuery("UPDATE i SET cancellato = 1 WHERE (idcentro =: centro)").setParameter("centro",centro);
 	}	
 
 }

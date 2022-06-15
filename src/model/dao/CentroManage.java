@@ -23,5 +23,7 @@ public interface CentroManage {
 	List<Centro> getCentri();
 	
 	void inserisciCentro(Centro c);
+	
+	void setCencellato(int centro);
 
 }

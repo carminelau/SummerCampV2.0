@@ -38,6 +38,9 @@ public class CentriControl extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Utente u = (Utente) request.getSession(false).getAttribute("utente");
+		String action= request.getParameter("action");
+		
+		if(action == null) {
 		if(u==null) {
 			response.sendError(401, "Autenticazione non effettuata!");
 			return;
@@ -50,6 +53,14 @@ public class CentriControl extends HttpServlet {
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/centri.jsp");
 		dispatcher.forward(request, response);
+	}
+		else {
+			int centro = Integer.parseInt(request.getParameter("centro"));
+			CentroManage centroman= new CentroManageDS();
+			centroman.setCencellato(centro);
+			
+			response.sendRedirect(request.getContextPath()+"/list_centri");
+		}
 	}
 
 	/**

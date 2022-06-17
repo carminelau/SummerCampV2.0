@@ -34,10 +34,17 @@
 	  <div class="card">
 	    <img src="./assets/images/iscrizione.png" class="card-img-top" alt="...">
 	    <div class="card-body">
+	    <%if(!utente.isAdmin()) { %>
 	      <h5 class="card-title">Iscrizioni</h5>
 	      <p class="card-text">
 	      <a href="${pageContext.request.contextPath}/iscrizione">Effettua iscrizione</a> <br>
 	      <a href="${pageContext.request.contextPath}/list_iscrizioni">Visualizza iscrizioni</a>
+	     <%}else{ %>
+	     <h5 class="card-title">Centri</h5>
+	      <p class="card-text">
+	      <a href="${pageContext.request.contextPath}/centri">Inserisci Centro</a> <br>
+	      <a href="${pageContext.request.contextPath}/list_centri">Visualizza Centri</a>
+	      <%} %>
 	      </p>
 	    </div>
 	  </div>

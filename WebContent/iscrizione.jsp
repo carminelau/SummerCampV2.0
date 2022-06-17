@@ -176,9 +176,10 @@ String error = (String) request.getAttribute("errorMessage");
             <option value="" selected>Seleziona centro estivo</option>
             <%
                 	for(Centro c: centri) {
-                		
+                		if(c.isCancellato()==0){
                 	%>
                 		<option value="<%=c.getIdCentro()%>"><%=c.getDenominazione()%></option>
+             		 <%}%>
              		 <%}%>
           </select>
     	  </div>

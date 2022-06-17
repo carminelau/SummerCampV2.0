@@ -3,8 +3,12 @@ package model.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContexts;
 import javax.persistence.PersistenceException;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import listener.LocalEntityManagerFactory;
 import model.entity.Bambino;
@@ -79,8 +83,22 @@ public class CentroManageDS implements CentroManage{
 		}
 	}
 	@Override
-	public void setCencellato(int centro) {
-		em.createQuery("UPDATE i SET cancellato = 1 WHERE (idcentro =: centro)").setParameter("centro",centro);
-	}	
+	public void setCencellato(int cen) {
+		try {
+			em.getTransaction().begin();
+
+			Centro cn= (Centro) em.find(Centro.class, cen);
+		 
+			cn.setCancellato(1);
+			
+			System.out.println(cn.getDenominazione());
+			em.persist(cn);
+			em.getTransaction().commit();
+		 //System.out.println(em.createNativeQuery("UPDATE Centro SET cancellato = 1 WHERE (idcentro=:cen)").setParameter("cen",cen).executeUpdate());
+	}
+		finally {
+			close();
+		}
+	}
 
 }

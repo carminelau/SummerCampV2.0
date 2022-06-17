@@ -40,26 +40,28 @@ public class CentriControl extends HttpServlet {
 		Utente u = (Utente) request.getSession(false).getAttribute("utente");
 		String action= request.getParameter("action");
 		
-		if(action == null) {
-		if(u==null) {
-			response.sendError(401, "Autenticazione non effettuata!");
-			return;
-		} 
-		
-		if(!(u instanceof Responsabile)) {
-			response.sendError(403, "Non sei autorizzato!");
-			return;
-		}
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/centri.jsp");
-		dispatcher.forward(request, response);
-	}
-		else {
+		if(action.equalsIgnoreCase("eliminacentro")) {
+			
 			int centro = Integer.parseInt(request.getParameter("centro"));
 			CentroManage centroman= new CentroManageDS();
 			centroman.setCencellato(centro);
 			
 			response.sendRedirect(request.getContextPath()+"/list_centri");
+		
+	}
+		else {
+			if(u==null) {
+				response.sendError(401, "Autenticazione non effettuata!");
+				return;
+			} 
+			
+			if(!(u instanceof Responsabile)) {
+				response.sendError(403, "Non sei autorizzato!");
+				return;
+			}
+			
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/centri.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

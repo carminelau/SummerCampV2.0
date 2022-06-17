@@ -95,13 +95,13 @@ public class Centro implements Serializable{
 	private int capienzaTot;
 	private String comune;
 	private String provincia;
-	private boolean cancellato;
+	private int cancellato;
 
-	public boolean isCancellato() {
+	public int isCancellato() {
 		return cancellato;
 	}
 
-	public void setCancellato(boolean cancellato) {
+	public void setCancellato(int cancellato) {
 		this.cancellato = cancellato;
 	}
 

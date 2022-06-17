@@ -69,6 +69,7 @@ else {
                     <a href="${pageContext.request.contextPath}/dashboard.jsp">Dashboard</a>
                 </li>
                 <li>
+                <%if(!utente.isAdmin()) {%>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Iscrizione</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
@@ -79,6 +80,7 @@ else {
                         </li>
                     </ul>
                 </li>
+                <%} %>
                 <% 
                 if(utente.isAdmin()) {%>
                 <li>

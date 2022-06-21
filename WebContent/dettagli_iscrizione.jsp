@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,model.entity.Iscrizione, model.entity.Bambino, model.entity.Settimana, control.gestioneIscrizione.SingolaIscrizioneControl, model.entity.Centro"
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*,main.model.entity.Iscrizione, main.model.entity.Bambino, main.model.entity.Settimana, main.control.gestioneIscrizione.SingolaIscrizioneControl, main.model.entity.Centro"
 	pageEncoding="UTF-8"%>
 
 <%

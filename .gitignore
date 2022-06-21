@@ -4,3 +4,5 @@
 WebContent/META-INF/context.xml
 /.classpath
 /WebContent/META-INF/context.xml
+/target/
+/ProjectSummerCenter/

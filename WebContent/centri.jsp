@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,model.entity.Utente, model.entity.Bambino, model.entity.Settimana, model.entity.Centro, model.entity.CentroSettimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,main.model.entity.Utente, main.model.entity.Bambino, main.model.entity.Settimana, main.model.entity.Centro, main.model.entity.CentroSettimana" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 String error = (String) request.getAttribute("errorMessage");
 

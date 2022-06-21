@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="SummerCenterPU" transaction-type="RESOURCE_LOCAL">
+		<class>classTests.User</class>
+		<class>main.model.entity.Bambino</class>
+		<class>main.model.entity.Centro</class>
+		<class>main.model.entity.CentroSettimana</class>
+		<class>main.model.entity.Genitore</class>
+		<class>main.model.entity.Iscrizione</class>
+		<class>main.model.entity.Responsabile</class>
+		<class>main.model.entity.Settimana</class>
+		<class>main.model.entity.Utente</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/summer_center?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;useSSL=false&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="carmine99" />
+        </properties>
+    </persistence-unit>
+</persistence>

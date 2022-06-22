@@ -310,7 +310,7 @@
       "id": "f21276e4-4bfa-4da7-8e61-b1b978ea229a",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/ProjectSummerCenter/dashboard.jsp",
+      "target": "http://localhost:8080/ProjectSummerCenter/dashboard.jsp",
       "targets": [],
       "value": ""
     }, {
@@ -1433,29 +1433,6 @@
         ["xpath=//div[5]/input", "xpath:position"]
       ],
       "value": "RSSGLC10R10H703"
-    }, {
-      "id": "6cedd418-5141-4057-a1f3-89e34a6908b9",
-      "comment": "",
-      "command": "click",
-      "target": "css=.container",
-      "targets": [
-        ["css=.container", "css:finder"],
-        ["xpath=//div[@id='content']/div", "xpath:idRelative"],
-        ["xpath=//body/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "3283b30c-6bc3-43c2-b370-bafe7697fda0",
-      "comment": "",
-      "command": "click",
-      "target": "css=.error:nth-child(3)",
-      "targets": [
-        ["css=.error:nth-child(3)", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div[5]/label[2]", "xpath:idRelative"],
-        ["xpath=//label[2]", "xpath:position"],
-        ["xpath=//label[contains(.,'Il campo non è valido!')]", "xpath:innerText"]
-      ],
-      "value": ""
     }, {
       "id": "05bb4ed1-a919-4439-be1d-3eb72c044a3f",
       "comment": "",

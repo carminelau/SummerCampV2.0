@@ -87,7 +87,7 @@ else {
                 <a href="#pageSubCentri" data-toggle="collapse" aria-expanded="false">Gestisci Centri</a>
                     <ul class="collapse list-unstyled" id="pageSubCentri">
                         <li>
-                            <a href="${pageContext.request.contextPath}/centri">Inserisci Centro</a>
+                            <a href="${pageContext.request.contextPath}/centri?action=ins">Inserisci Centro</a>
 
                         </li>
                         <li>

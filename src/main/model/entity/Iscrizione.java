@@ -148,7 +148,7 @@ public class Iscrizione implements Serializable {
 
 	@Id
 	@Column(name="idiscrizione")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idIscrizione;
 	private Date dataIscrizione;
 	private String qrCode;

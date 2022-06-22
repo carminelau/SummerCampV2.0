@@ -89,7 +89,7 @@ public class Centro implements Serializable{
 		this.provincia = provincia;
 	}
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCentro;
 	private String denominazione;
 	private String indirizzo;

@@ -31,8 +31,8 @@ public class IscrizioneManageDSTest extends TestCase{
 		query = Mockito.mock(Query.class);
 		transaction = Mockito.mock(EntityTransaction.class);
 		settimana= Mockito.mock(Settimana.class);
-		Mockito.mock(Genitore.class);
-		Mockito.mock(Bambino.class);
+		genitore=Mockito.mock(Genitore.class);
+		bambino=Mockito.mock(Bambino.class);
 		
 		listaSett= new ArrayList<Settimana>();
 		listaSett.add(settimana);
@@ -145,8 +145,32 @@ public class IscrizioneManageDSTest extends TestCase{
 		
 	}
 	
+	@Test
+	public void testIscrizione5BambinoNonSpecificato() {
+		i.setIdIscrizione(1);
+		i.setDataIscrizione(data.getTime());
+		i.setQrCode("QRcode");
+		i.setPrezzo(100);
+		i.setRichiestaDisdetta(false);
+		i.setRimborsoDisdetta(0);
+		i.setServizioSportivo(true);
+		i.setTipoSoggiorno("Part-Time");
+		i.setPagata(false);
+		i.setSettimane(listaSett);
+		i.setCentro(centro);;
+		
+		
+		try {
+			isc.save(i);
+			fail("Dovrebbe esserci Illegal Argument Exception");
+		}catch(IllegalArgumentException e) {
+		}
+		
+	}
+	
 	private Centro centro;
 	private Bambino bambino;
+	private Genitore genitore;
 	private Settimana settimana;
 	private List<Settimana> listaSett;
 	private Iscrizione i=new Iscrizione();

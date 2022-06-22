@@ -130,9 +130,10 @@ public class Iscrizione implements Serializable {
 		if(!i.getQrCode().matches("^[A-Za-z 0-9 ]{2,}$")
 			|| i.getDataIscrizione().after(new Date())
 			|| !i.getTipoSoggiorno().matches("^[A-Za-z -]{9,9}$")
-			|| i.getSettimane()==null)
-		{
-			
+			|| i.getSettimane() == null
+			|| i.getCentro() == null
+			|| i.getBambino() == null)
+		{			
 			return false;
 			
 		} else return true;

@@ -30,7 +30,7 @@ public class IscrizioneManageDS implements IscrizioneManage {
 	
 	public void save(Iscrizione i) throws PersistenceException {
 		if(i!=null) {
-			if(Iscrizione.matches(i) && i.getCentro()!= null) {
+			if(Iscrizione.matches(i)) {
 				em.getTransaction().begin();
 				em.persist(i);
 				em.getTransaction().commit();

@@ -70,28 +70,23 @@ public class CentriControl extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String action= request.getParameter("action");
 		String denominazione = (String) request.getParameter("nome");
 		String comune = (String) request.getParameter("comune");
 		String provincia = (String) request.getParameter("provincia");
 		String indirizzo = (String) request.getParameter("indirizzo");
 		String capienza2 =(String) request.getParameter("capienza");
-		System.out.println(denominazione);
-		System.out.println(comune);
-		System.out.println(provincia);
-		System.out.println(indirizzo);
-		System.out.println(capienza2);
-		int capienza =100;
-		
+
 		CentroManage centroman= new CentroManageDS();
 		Centro c = new Centro();
 		
-		if (denominazione != null
-				|| comune != null 
-				|| provincia != null
-				|| indirizzo != null
-				|| capienza >=1)
+		if ((denominazione != null && !denominazione.isBlank())
+				|| (comune != null && !comune.isBlank())
+				|| (provincia != null && !provincia.isBlank())
+				|| (indirizzo != null && !indirizzo.isBlank())
+				|| (!capienza2.isBlank() && Integer.parseInt(capienza2) >=1))
 		{
-			c.setCapienzaTot(capienza);
+			c.setCapienzaTot(Integer.parseInt(capienza2));
 			c.setComune(comune);
 			c.setDenominazione(denominazione);
 			c.setProvincia(provincia);
@@ -102,7 +97,8 @@ public class CentriControl extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/list_centri");
 		} else {
 			request.setAttribute("errorMessage", "Il formato dei dati e' errato o non sono presenti tutti i campi!");
-			this.doGet(request, response);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/centri.jsp");
+			dispatcher.forward(request, response);
 			return;
 		}
 		

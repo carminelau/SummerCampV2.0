@@ -42,7 +42,7 @@
 	     <%}else{ %>
 	     <h5 class="card-title">Centri</h5>
 	      <p class="card-text">
-	      <a href="${pageContext.request.contextPath}/centri">Inserisci Centro</a> <br>
+	      <a href="${pageContext.request.contextPath}/centri?action=ins">Inserisci Centro</a> <br>
 	      <a href="${pageContext.request.contextPath}/list_centri">Visualizza Centri</a>
 	      <%} %>
 	      </p>

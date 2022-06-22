@@ -107,10 +107,14 @@ public class Centro implements Serializable{
 	}
 
 	public static boolean matches(Centro c) {
-		if((c.getDenominazione()== null)
+		if(c.getDenominazione()== null
+			|| c.getDenominazione().isBlank()
 			|| c.getComune() == null
+			|| c.getComune().isBlank()
 			|| c.getProvincia()== null
+			|| c.getProvincia().isBlank()
 			|| c.getIndirizzo() == null
+			|| c.getIndirizzo().isBlank()
 			|| c.getCapienzaTot() <= 0) {
 			return false;
 		}

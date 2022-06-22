@@ -86,7 +86,7 @@ public class CentriControl extends HttpServlet {
 		Centro c = new Centro();
 		
 		if (denominazione != null
-				|| comune != null
+				|| comune != null 
 				|| provincia != null
 				|| indirizzo != null
 				|| capienza >=1)
@@ -101,11 +101,35 @@ public class CentriControl extends HttpServlet {
 			
 			response.sendRedirect(request.getContextPath()+"/list_centri");
 		} else {
-			request.setAttribute("errorMessage", "Il formato dei dati � errato o non sono presenti tutti i campi!");
+			request.setAttribute("errorMessage", "Il formato dei dati e' errato o non sono presenti tutti i campi!");
 			this.doGet(request, response);
 			return;
 		}
 		
+		/**
+		if ((denominazione == null || denominazione.isEmpty())
+				|| (comune == null || comune.isEmpty())
+				|| (provincia == null || provincia.isEmpty())
+				|| (indirizzo == null || indirizzo.isEmpty()))
+		{
+			request.setAttribute("errorMessage", "Il formato dei dati e' errato o non sono presenti tutti i campi!");
+			this.doGet(request, response);
+			return;
+			
+		} else {
+			
+			c.setCapienzaTot(capienza);
+			c.setComune(comune);
+			c.setDenominazione(denominazione);
+			c.setProvincia(provincia);
+			c.setIndirizzo(indirizzo);
+			
+			centroman.inserisciCentro(c);
+			
+			response.sendRedirect(request.getContextPath()+"/list_centri");
+			
+		}
+		*/
 		
 	}
 

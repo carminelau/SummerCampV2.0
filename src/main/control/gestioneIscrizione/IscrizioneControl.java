@@ -175,7 +175,7 @@ public class IscrizioneControl extends HttpServlet {
 			(!documentoIdentita.matches("([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(.jpeg|.png|.pdf)$")) ||
 			(!certificatoMedico.matches("([a-zA-Z0-9\\s_\\\\.\\-\\(\\):])+(.jpeg|.png|.pdf)$"))
 		) {
-			request.setAttribute("errorMessage", "Il formato dei dati � errato o le settimane non sono selezionate!");
+			request.setAttribute("errorMessage", "Il formato dei dati e' errato o le settimane non sono selezionate!");
 			this.doGet(request, response);
 			return;
 		}

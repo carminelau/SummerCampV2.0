@@ -200,13 +200,6 @@
         ["xpath=//button[contains(.,'Accedi')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "e34da194-3042-4abe-91ce-be78e3734517",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.alert",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "0dee0c65-a32b-484d-a851-a5ea0988252c",
@@ -294,13 +287,6 @@
         ["xpath=//form/button", "xpath:position"],
         ["xpath=//button[contains(.,'Accedi')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "3bc42046-f1f7-464d-b0f2-a1dd6ecbdab8",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.alert",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -1207,32 +1193,6 @@
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "b80372af-a1e2-4557-95dd-7fe09346f4a5",
-      "comment": "",
-      "command": "click",
-      "target": "css=.documenti > .h5",
-      "targets": [
-        ["css=.documenti > .h5", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[4]/h1", "xpath:idRelative"],
-        ["xpath=//div[4]/h1", "xpath:position"],
-        ["xpath=//h1[contains(.,'Documenti')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "3354dd55-ea57-4a81-a990-47d17a026fa5",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "8691eaf8-cb80-43ac-b244-22d181f63861",
@@ -1636,32 +1596,6 @@
         ["xpath=//form[@id='form_iscrizione']/div[6]/button", "xpath:idRelative"],
         ["xpath=//div[6]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "e759df38-e7b8-4e9a-ac5d-aba8360b17dd",
-      "comment": "",
-      "command": "click",
-      "target": "css=.error:nth-child(3)",
-      "targets": [
-        ["css=.error:nth-child(3)", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div[5]/label[2]", "xpath:idRelative"],
-        ["xpath=//label[2]", "xpath:position"],
-        ["xpath=//label[contains(.,'Il campo non è valido!')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "09efffe2-856c-4429-848d-9d7f811bcda5",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }]
@@ -3187,31 +3121,6 @@
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "11332640-5fd0-49a4-9d46-622ca39e167d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.alert",
-      "targets": [
-        ["css=.alert", "css:finder"],
-        ["xpath=//div[@id='content']/div/div", "xpath:idRelative"],
-        ["xpath=//body/div/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9f95ba55-4534-4cfb-b67d-a62ea2d763f0",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
     }]
   }, {
     "id": "8d968d9a-de81-48ec-ac45-a42217ccf83f",
@@ -3545,46 +3454,6 @@
         ["xpath=//form[@id='form_iscrizione']/div[6]/button", "xpath:idRelative"],
         ["xpath=//div[6]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "2d93a9c3-a3f1-4406-a22f-6c9bb6ac1ac3",
-      "comment": "",
-      "command": "click",
-      "target": "id=dataNascita",
-      "targets": [
-        ["id=dataNascita", "id"],
-        ["name=dataNascita", "name"],
-        ["css=#dataNascita", "css:finder"],
-        ["xpath=//input[@id='dataNascita']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div[3]/input", "xpath:idRelative"],
-        ["xpath=//div[3]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "8bc54da2-3a36-473d-86df-5571710b99f1",
-      "comment": "",
-      "command": "click",
-      "target": "css=.error:nth-child(3)",
-      "targets": [
-        ["css=.error:nth-child(3)", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div[3]/label[2]", "xpath:idRelative"],
-        ["xpath=//label[2]", "xpath:position"],
-        ["xpath=//label[contains(.,'Il campo è obbligatorio')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "0e8dc91e-e6cf-4110-813c-93b335ecd54f",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }]
@@ -3935,38 +3804,6 @@
         ["xpath=//div[6]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "7aaa6ee2-6fa5-4653-bd19-d5ed1472125d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.infoIscrizione > .form-label:nth-child(3) > .error:nth-child(3)",
-      "targets": [
-        ["css=.infoIscrizione > .form-label:nth-child(3) > .error:nth-child(3)", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[5]/div[2]/label[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div[2]/label[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9b003348-d1fb-4398-9bdd-14b2eba7e97b",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "b0b926a3-c866-4ed5-81f7-595e616a5f58",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.error:nth-child(3)",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -4364,7 +4201,7 @@
       ],
       "value": ""
     }, {
-      "id": "42d26461-3ebe-47d5-ad7e-54425337601e",
+      "id": "12daa95e-f77c-42ce-a21c-8a5910dde6df",
       "comment": "",
       "command": "click",
       "target": "css=.btn-lg",
@@ -4714,7 +4551,7 @@
       ],
       "value": ""
     }, {
-      "id": "2b45e7dc-dbdf-466c-a0a4-66e5db5d611e",
+      "id": "49a31293-df83-403c-b59b-9738e75a2460",
       "comment": "",
       "command": "click",
       "target": "css=.btn-lg",
@@ -5243,28 +5080,6 @@
       ],
       "value": "C:\\fakepath\\Ubuntu 64-bit.rar"
     }, {
-      "id": "f214ef4f-9960-4d51-9251-20801a82f562",
-      "comment": "",
-      "command": "mouseUp",
-      "target": "css=.documenti",
-      "targets": [
-        ["css=.documenti", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[4]", "xpath:idRelative"],
-        ["xpath=//form/div[4]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ab219724-de95-4720-ada9-e9e2e58c1360",
-      "comment": "",
-      "command": "click",
-      "target": "css=.documenti",
-      "targets": [
-        ["css=.documenti", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[4]", "xpath:idRelative"],
-        ["xpath=//form/div[4]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "f977e08b-c7a5-4354-afd8-e839d370a92e",
       "comment": "",
       "command": "click",
@@ -5412,20 +5227,6 @@
         ["xpath=//div[6]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "6286c41a-780e-43e5-b2df-26b75a2a1834",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.form-label:nth-child(2) > .error:nth-child(3)",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "5c639ea6-5662-4c6d-8c3f-199d17119227",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.form-label:nth-child(3) > .error:nth-child(3)",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -5876,13 +5677,6 @@
         ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "5930fd87-17fa-4b9c-a792-6825b9e6257d",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "id=email",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "193f9050-1538-4274-8dcc-d1cae8e0b10c",
@@ -5939,13 +5733,6 @@
         ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Visualizza iscrizioni')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "c9e7127f-1289-4a59-a6af-258f3d35e8fb",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.text-left",
-      "targets": [],
       "value": ""
     }]
   }, {
@@ -6356,38 +6143,6 @@
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
       "value": ""
-    }, {
-      "id": "950a446b-d419-4950-bf3b-dc69f612b7d7",
-      "comment": "",
-      "command": "click",
-      "target": "css=.infoIscrizione > .form-label:nth-child(3) > .error:nth-child(3)",
-      "targets": [
-        ["css=.infoIscrizione > .form-label:nth-child(3) > .error:nth-child(3)", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[5]/div[2]/label[2]", "xpath:idRelative"],
-        ["xpath=//div[5]/div[2]/label[2]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "006647a9-6752-4a5e-8e84-578c2e644d88",
-      "comment": "",
-      "command": "click",
-      "target": "id=nome",
-      "targets": [
-        ["id=nome", "id"],
-        ["name=nome", "name"],
-        ["css=#nome", "css:finder"],
-        ["xpath=//input[@id='nome']", "xpath:attributes"],
-        ["xpath=//form[@id='form_iscrizione']/div[2]/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "61d5a13a-c41e-4f1d-bf2e-84c4b5a5e0ca",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.error:nth-child(3)",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "db94ca87-c183-4bf2-9d90-5d82195f1cd0",
@@ -6474,28 +6229,6 @@
         ["xpath=//div[4]/div/input", "xpath:position"]
       ],
       "value": "C:\\fakepath\\Ubuntu 64-bit.rar"
-    }, {
-      "id": "3c0e23f7-26bc-4b0b-8b22-3a40e22e9a1b",
-      "comment": "",
-      "command": "mouseUp",
-      "target": "css=.documenti",
-      "targets": [
-        ["css=.documenti", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[4]", "xpath:idRelative"],
-        ["xpath=//form/div[4]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "56d5427f-b982-4cb7-8978-5a28ed678cb9",
-      "comment": "",
-      "command": "click",
-      "target": "css=.documenti",
-      "targets": [
-        ["css=.documenti", "css:finder"],
-        ["xpath=//form[@id='form_iscrizione']/div[4]", "xpath:idRelative"],
-        ["xpath=//form/div[4]", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "3d5298c8-4cde-4cd3-ac82-ca1ffde17cf1",
       "comment": "",
@@ -6644,20 +6377,6 @@
         ["xpath=//div[6]/button", "xpath:position"],
         ["xpath=//button[contains(.,'Iscrivi bambino')]", "xpath:innerText"]
       ],
-      "value": ""
-    }, {
-      "id": "74980752-f261-4d9e-aed6-b63daa17eb74",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.form-label:nth-child(2) > .error:nth-child(3)",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "25ea92f0-6be0-4865-b853-83b26067cf60",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.form-label:nth-child(3) > .error:nth-child(3)",
-      "targets": [],
       "value": ""
     }]
   }, {

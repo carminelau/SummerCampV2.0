@@ -1,4 +1,4 @@
-# Summer Center
+# Summer Center V2.0
 Progetto di Ingegneria, Gestione ed Evoluzione del Software <br>
 <br>
 La nostra proposta si basa sulla manutenzione ed evoluzione di una web application “Summer Center” volta all’automatizzazione della compilazione dei moduli riguardanti i genitori, i bambini, l’iscrizione e alla gestione della segreteria per risolvere i problemi dell’errata compilazione dei moduli e del sistema di pagamento. <br>
